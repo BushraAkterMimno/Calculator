@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/cdcfc18957.js" crossorigin="anonymous"></script>
+
+    <!-- my css -->
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="main">
+        <div class="cal">
+            <h3>Calculator</h3>
+            <input type="text" id="result" disabled>
+            <br>
+            <button onclick="ac()" class="ac">AC</button>
+            <button onclick="data('%')">%</button>
+            <button onclick="del()"><i class="fa-solid fa-x del"></i></button>
+            <button onclick="data('/')" class="operator">/</button>
+            <button onclick="data('7')">7</button>
+            <button onclick="data('8')">8</button>
+            <button onclick="data('9')">9</button>
+            <button onclick="data('*')" class="operator">X</button>
+            <button onclick="data('4')">4</button>
+            <button onclick="data('5')">5</button>
+            <button onclick="data('6')">6</button>
+            <button onclick="data('-')" class="operator">-</button>
+            <button onclick="data('1')">1</button>
+            <button onclick="data('2')">2</button>
+            <button onclick="data('3')">3</button>
+            <button onclick="data('+')" class="operator">+</button>
+            <button onclick="data('00')">00</button>
+            <button onclick="data('0')">0</button>
+            <button onclick="data('.')">.</button>
+            <button onclick="calculate('=')">=</button>
+        </div>
+    </div>
+
+    <script>
+        function data(value){
+            document.getElementById("result").value = 
+            document.getElementById("result").value + value
+        }
+
+        function ac(){
+            document.getElementById("result").value = ""
+        }
+
+        function del(){
+            let currentvalue = document.getElementById("result").value;
+            document.getElementById("result").value = currentvalue.slice(0,-1);
+        }
+
+        function calculate(){
+            totalresult = document.getElementById("result");
+            totalresult.value = eval(totalresult.value);
+        }
+    </script>
+</body>
+</html>
